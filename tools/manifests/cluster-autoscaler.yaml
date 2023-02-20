@@ -1,0 +1,13 @@
+autoDiscovery:
+  clusterName: ${clusterName}
+
+awsRegion: us-east-1
+
+rbac:
+  serviceAccount:
+    name: cluster-autoscaler
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::123:role/AmazonEKSClusterAutoscalerRole
+
+image:
+  tag: v1.24.0

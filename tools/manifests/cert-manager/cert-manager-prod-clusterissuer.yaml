@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: "ifeoluwa.oluwole@igt.com"
+    ## secret was created manually
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - selector:
+        dnsZones:
+        - "xx"
+      dns01:
+        route53:
+          region: ca-central-1
+          accessKeyID: xx
+          secretAccessKeySecretRef:
+            key: secret-access-key
+            name: route53-credentials

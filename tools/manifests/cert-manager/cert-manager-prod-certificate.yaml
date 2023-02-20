@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "xx"
+  namespace: cert-manager
+spec:
+  secretName: "xx"
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  secretTemplate:
+    annotations:
+      replicator.v1.mittwald.de/replicate-to: "*"
+  commonName: "*.jxx"
+  dnsNames:
+  - "*.xx"
+  - "xx"

@@ -1,0 +1,11 @@
+ingress:
+  enabled: true
+  hosts:
+    - xx
+  tls:
+    - secretName: xx
+      hosts:
+        - xx
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  className: "nginx"
